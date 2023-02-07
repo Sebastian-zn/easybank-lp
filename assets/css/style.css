@@ -1,3 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
 
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.125rem;
+  color: hsl(233deg, 8%, 62%);
+  line-height: 1.3;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  color: hsl(233deg, 8%, 62%);
+}
+
+button, .button {
+  padding: 0.875rem 2.1875rem;
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  border: 0;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out;
+}
+button:hover, .button:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+.header.open .overlay {
+  display: block;
+  animation: fade-in 300ms ease-in-out forwards;
+}
+.header.open .header__menu > span:first-child {
+  transform: rotate(45deg);
+}
+.header.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+.header.open .header__menu > span:last-child {
+  transform: rotate(-45deg);
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.125rem 1.5rem;
+}
+.header__logo img {
+  width: 8.8125rem;
+  height: 1.375rem;
+}
+.header__menu > span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background-color: hsl(233deg, 26%, 24%);
+  transition: all 200ms ease-in-out;
+  transform-origin: 6px 1px;
+}
+.header__menu > span:not(:last-child) {
+  margin-bottom: 3px;
+}
+.header__menu.open .header__menu > span:first-child {
+  transform: rotate(45deg);
+}
+.header__menu.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+.header__menu.open .header__menu > span:last-child {
+  transform: rotate(-45deg);
+}
+.header .overlay {
+  opacity: 0;
+  position: fixed;
+  top: 3.75rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(hsl(233deg, 26%, 24%), transparent);
+}
+.header__links a {
+  position: relative;
+  font-size: 0.875rem;
+  color: hsl(233deg, 8%, 62%);
+  transition: color 200ms ease-in-out;
+}
+.header__links a:not(:last-child) {
+  margin-right: 32px;
+}
+.header__links a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+.header__links a:hover {
+  color: hsl(233deg, 26%, 24%);
+}
+.header__links a:hover::before {
+  opacity: 1;
+}
 
 /*# sourceMappingURL=style.css.map */

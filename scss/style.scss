@@ -1,0 +1,10 @@
+// Import Font Style
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+@import "animations";
+@import "mixins";
+@import "variables";
+
+@import "globals";
+
+// Import Sections
+@import "sections/header";
