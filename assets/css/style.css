@@ -189,6 +189,7 @@ button:hover, .button:hover {
   bottom: 0;
   left: 0;
   background-image: linear-gradient(hsl(233deg, 26%, 24%), transparent);
+  z-index: -1;
 }
 .header.open .overlay {
   display: block;
@@ -271,6 +272,7 @@ button:hover, .button:hover {
   margin-top: 1.5rem;
   padding: 1.625rem;
   border-radius: 5px;
+  z-index: 99;
 }
 .header__menu a {
   display: block;
@@ -292,6 +294,11 @@ button:hover, .button:hover {
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 19.5rem;
+}
+@media (max-width: 63.9375em) {
+  .hero__image {
+    z-index: -3;
+  }
 }
 @media (min-width: 40em) {
   .hero__image {
@@ -328,6 +335,11 @@ button:hover, .button:hover {
   background-size: 93%;
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+@media (max-width: 63.9375em) {
+  .hero__image::after {
+    z-index: -2;
+  }
 }
 @media (min-width: 40em) {
   .hero__image::after {

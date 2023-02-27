@@ -11,7 +11,11 @@
     background-repeat: no-repeat;
     background-position: center center;
     min-height: 19.5rem;
-
+    
+    @include breakpoint-down(md) {
+      z-index: -3;
+    }
+  
     @include breakpoint-up(md) {
       min-height: 25rem;
       background-position: center 60%;
@@ -48,6 +52,9 @@
       background-repeat: no-repeat;
       background-position: center bottom;
       
+      @include breakpoint-down(md) {
+        z-index: -2;
+      }
       
       @include breakpoint-up(md) {
         background-size: 52%;
